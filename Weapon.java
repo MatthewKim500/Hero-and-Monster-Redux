@@ -1,3 +1,7 @@
 public class Weapon{
-    public int damage = (int)Math.random() * 51 + 10;
+    int damage;
+    public Weapon()
+    {
+        damage = (int)Math.random() * 51 + 10;
+    }
 }
