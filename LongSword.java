@@ -1,4 +1,8 @@
 public class LongSword extends Weapon
 {
-    public int damage = super.damage + 20;
+    public int damage;
+    public LongSword()
+    {
+        damage = super.damage + 20;
+    }
 }
