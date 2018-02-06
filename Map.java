@@ -232,10 +232,13 @@ public class Map{
     }
     
     public boolean foundMon(int a, int b, boolean runAway){
+        int strength = map[a][b].mon.str;
         runAway = false;
         boolean encounter = true;
         System.out.println("Hero encounters a monster! The monster engages!" +
-                           "\n" + "Enter an action (run, attack):");
+                           "\n" + "Enter an action (run, attack):" + "\n" + 
+                           "Monster speed: " + map[a][b].mon.speed + "\t" + 
+                           "Monster strength" + strength);
         while(encounter){
             String action = kbReader.next();
             if(action.equals("attack") && charHero.hero.health > 0){
@@ -244,7 +247,7 @@ public class Map{
                     encounter = false;
                     System.out.println("The monster is dead.");
                 }else{
-                    charHero.hero.health -= map[a][b].mon.attack;
+                    charHero.hero.health -= map[a][b].mon.attack * (1 + strength /2);
                     System.out.println("Monster attacks, Hero's health is now " + charHero.hero.health);
                 }
             }else if(action.equals("run")){
@@ -282,7 +285,6 @@ public class Map{
     public boolean run(int a, int b){
         int chance = (int)(Math.random() * 4);
         boolean runAway = false;
-        System.out.println(map[a][b].mon.speed);
         if(map[a][b].mon.speed == 0){
             if(chance == 0){
                 runAway = false;
