@@ -6,7 +6,7 @@ public class Hero{
         attack = (int)(Math.random() * 21 + 10);
         health = 100;
         kill = 0;
-        x = 9;
+        x = 14;
         y = 0;
         hasArmor = false;
         hasSword = false;
