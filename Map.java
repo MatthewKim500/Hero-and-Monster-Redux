@@ -62,51 +62,112 @@ public class Map{
         boolean runAway = false;
         if(charHero.hero.x > 0 && direction.equals("w")){
             System.out.println("Hero moves to the north");
-            if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
-                map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
-            }
+            //if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
+            map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
+            //}
             charHero.hero.x -= 1;
+            map[charHero.hero.x][charHero.hero.y] = charHero;
+            for(int a = 0; a <= 14; a++){
+                for(int b = 0; b <= 14; b++){
+                    System.out.print(" [ " + map[a][b].name + " ] ");
+                    
+                }
+                System.out.println("");
+            }
             //check(charHero.hero.x, charHero.hero.y, runAway);
             if(check(charHero.hero.x, charHero.hero.y, runAway)){
+                map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
                 charHero.hero.x += 1;
-            }else{
                 map[charHero.hero.x][charHero.hero.y] = charHero;
+                for(int a = 0; a <= 14; a++){
+                    for(int b = 0; b <= 14; b++){
+                        System.out.print(" [ " + map[a][b].name + " ] ");
+                        
+                    }
+                    System.out.println("");
+            }
             }
         }else if(charHero.hero.x < 14 && direction.equals("s")){
             System.out.println("Hero moves to the south");
-            if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
+            //if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
                 map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
-            }
+            //}
             charHero.hero.x += 1;
+            map[charHero.hero.x][charHero.hero.y] = charHero;
+            for(int a = 0; a <= 14; a++){
+                for(int b = 0; b <= 14; b++){
+                    System.out.print(" [ " + map[a][b].name + " ] ");
+                    
+                }
+                System.out.println("");
+            }
             //check(charHero.hero.x, charHero.hero.y, runAway);
             if(check(charHero.hero.x, charHero.hero.y, runAway)){
+                map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
                 charHero.hero.x -= 1;
-            }else{
                 map[charHero.hero.x][charHero.hero.y] = charHero;
+                for(int a = 0; a <= 14; a++){
+                   for(int b = 0; b <= 14; b++){
+                        System.out.print(" [ " + map[a][b].name + " ] ");
+                        
+                    }
+                    System.out.println("");
+                }
             }
         }else if(charHero.hero.y > 0 && direction.equals("a")){
             System.out.println("Hero moves to the east");
-            if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
+            //if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
                 map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
-            }
+            //}
             charHero.hero.y -= 1;
+            map[charHero.hero.x][charHero.hero.y] = charHero;
+            for(int a = 0; a <= 14; a++){
+                for(int b = 0; b <= 14; b++){
+                    System.out.print(" [ " + map[a][b].name + " ] ");
+                    
+                }
+                System.out.println("");
+            }
             //check(charHero.hero.x, charHero.hero.y, runAway);
             if(check(charHero.hero.x, charHero.hero.y, runAway)){
+                map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
                 charHero.hero.y += 1;
-            }else{
                 map[charHero.hero.x][charHero.hero.y] = charHero;
+                for(int a = 0; a <= 14; a++){
+                for(int b = 0; b <= 14; b++){
+                    System.out.print(" [ " + map[a][b].name + " ] ");
+                    
+                }
+                System.out.println("");
             }
+            }
+            
         }else if(charHero.hero.y < 14 && direction.equals("d")){
             System.out.println("Hero moves to the west");
-            if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
+            //if(!map[charHero.hero.x][charHero.hero.y].name.equals("Farmer")){
                 map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
-            }
+            //}
             charHero.hero.y += 1;
+            map[charHero.hero.x][charHero.hero.y] = charHero;
+            for(int a = 0; a <= 14; a++){
+                for(int b = 0; b <= 14; b++){
+                    System.out.print(" [ " + map[a][b].name + " ] ");
+                    
+                }
+                System.out.println("");
+            }
             //check(charHero.hero.x, charHero.hero.y, runAway);
             if(check(charHero.hero.x, charHero.hero.y, runAway)){
+                map[charHero.hero.x][charHero.hero.y] = new Object("nothing");
                 charHero.hero.y -= 1;
-            }else{
                 map[charHero.hero.x][charHero.hero.y] = charHero;
+                for(int a = 0; a <= 14; a++){
+                for(int b = 0; b <= 14; b++){
+                    System.out.print(" [ " + map[a][b].name + " ] ");
+                    
+                }
+                System.out.println("");
+            }
             }
         }else{
             System.out.println("Hero is at the edge of the world");
@@ -122,6 +183,50 @@ public class Map{
         }else if(map[a][b].name.equals("Potion")){
             foundPotion();
             map[a][b] = new Object("nothing");
+        }
+        
+        if(a >= 1){
+            if(map[a-1][b].name.equals("Monster")){
+                return foundMon(a-1, b, runAway);
+            }else if(map[a-1][b].name.equals("Farmer")){
+                return foundFarmer(a-1, b);
+            }else if(map[a-1][b].name.equals("Potion")){
+                foundPotion();
+                map[a-1][b] = new Object("nothing");
+            }
+        }
+        
+        if(a <= 13){
+            if(map[a+1][b].name.equals("Monster")){
+                return foundMon(a+1, b, runAway);
+            }else if(map[a+1][b].name.equals("Farmer")){
+                return foundFarmer(a+1, b);
+            }else if(map[a+1][b].name.equals("Potion")){
+                foundPotion();
+                map[a+1][b] = new Object("nothing");
+            }
+        }
+        
+        if(b <= 13){
+            if(map[a][b+1].name.equals("Monster")){
+                return foundMon(a, b+1, runAway);
+            }else if(map[a][b+1].name.equals("Farmer")){
+                return foundFarmer(a, b+1);
+            }else if(map[a][b+1].name.equals("Potion")){
+                foundPotion();
+                map[a][b+1] = new Object("nothing");
+            }
+        }
+        
+        if(b>=1){
+            if(map[a][b-1].name.equals("Monster")){
+                return foundMon(a, b-1, runAway);
+            }else if(map[a][b-1].name.equals("Farmer")){
+                return foundFarmer(a, b-1);
+            }else if(map[a][b-1].name.equals("Potion")){
+                foundPotion();
+                map[a][b-1] = new Object("nothing");
+            }
         }
         return runAway;
     }
@@ -216,7 +321,7 @@ public class Map{
     
     public void foundSword(){
         System.out.println("Hero found a sword.");
-        Weapon sword = new Weapon();
+        Sword sword = new Sword();
         charHero.hero.attack = sword.damage;
     }
     
