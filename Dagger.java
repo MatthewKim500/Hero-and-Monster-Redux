@@ -1,4 +1,8 @@
 public class Dagger extends Weapon
 {
-    public int damage = super.damage;
+    public int damage;
+    public Dagger()
+    {
+        damage = super.damage;
+    }
 }
